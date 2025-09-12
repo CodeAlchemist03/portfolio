@@ -30,12 +30,12 @@ const Hero = () => {
           {/* ✅ Logo & Text (Top Left) */}
           <div className="absolute top-5 left-5 flex items-center gap-3 p-4">
             <Image src={logoImage} alt="Logo" width={20} height={20} className="w-4 h-4" />
-            <span className="text-sm font-bold text-gray-800">MY PORTFOLIO</span>
+            <span className="text-sm font-bold text-gray-800">PORTFOLIO</span>
           </div>
-          <div className="absolute top-5 right-5 flex items-center gap-3 p-4">
+          {/* <div className="absolute top-5 right-5 flex items-center gap-3 p-4">
            
-            <span className="text-sm font-light text-gray-800">Scroll down for Video Resume</span>
-          </div>
+            <span className="text-sm font-light text-gray-800">Scroll down for More Details</span>
+          </div> */}
           <div className="absolute w-40 h-40 bg-red-400 opacity-30 blur-3xl top-10 left-10 rounded-full"></div>
 
           {/* Profile Image */}
