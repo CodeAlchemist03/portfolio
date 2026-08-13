@@ -1,7 +1,126 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@layer utilities {
-    .animate-spin-slow {
-      animation: spin 8s linear infinite;
-    }
+/* ------------------------------------------------------------------
+   Design tokens — monochrome ink with a single copper accent.
+   ------------------------------------------------------------------ */
+@theme {
+  /* Neutral charcoal ramp — deliberately not black, so large surfaces read as
+     grey rather than blacked out. ink-950 is the page background. */
+  --color-ink-950: #1b1c1f;
+  --color-ink-900: #232428;
+  --color-ink-850: #292b30;
+  --color-ink-800: #34363d;
+  --color-ink-700: #43464e;
+  --color-ink-600: #575a63;
+  --color-ink-400: #909399;
+  --color-ink-300: #b9bbc1;
+  --color-ink-200: #d5d7db;
+  --color-ink-100: #eaebed;
+  --color-ink-50: #fafafb;
+
+  --color-copper-400: #e0975a;
+  --color-copper-500: #c8783c;
+  --color-copper-600: #b87333;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jb), ui-monospace, 'SF Mono', monospace;
+
+  --animate-marquee: marquee 42s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor targets so the fixed nav doesn't cover section headings. */
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-ink-100);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-copper-600);
+  color: #fff;
+}
+
+/* Fine grain over the whole page — keeps large flat black areas from
+   banding and adds a bit of texture. */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hairline grid backdrop used behind the hero. */
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 35%, #000 40%, transparent 100%);
+}
+
+/* Small uppercase mono label used for section eyebrows and metadata. */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-400);
+}
+
+/* Copper hairline that grows on hover — used on cards and links. */
+.rule {
+  background: linear-gradient(
+    to right,
+    var(--color-copper-600),
+    var(--color-copper-400),
+    transparent
+  );
+}
+
+/* ------------------------------------------------------------------
+   Scroll reveal — hidden state is CSS-only so SSR and client markup match.
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
   }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
