@@ -9,11 +9,11 @@ export const skillGroups = [
   },
   {
     title: 'Backend & Data',
-    items: ['Node.js', 'Next.js API Routes', 'MongoDB', 'REST APIs', 'Webhooks', 'Auth flows', 'BigQuery'],
+    items: ['Node.js', 'Next.js API Routes', 'MongoDB', 'PostgreSQL + Prisma', 'REST APIs', 'Webhooks', 'Auth flows', 'BigQuery'],
   },
   {
     title: 'Commerce',
-    items: ['Shopify Storefront API', 'Shopify Admin API', 'Headless architecture', 'Metaobjects / Metafields', 'Razorpay', 'Ornaverse ERP'],
+    items: ['Shopify app development (Remix, Polaris)', 'Shopify Storefront API', 'Shopify Admin API', 'Web Pixels', 'Headless architecture', 'Metaobjects / Metafields', 'Razorpay', 'Ornaverse ERP'],
   },
   {
     title: 'Analytics & Growth',
@@ -21,6 +21,6 @@ export const skillGroups = [
   },
   {
     title: 'Cloud & Tooling',
-    items: ['GCP (Cloud Functions, BigQuery)', 'AWS', 'Vercel', 'Git / GitHub', 'Postman', 'Zoho CRM'],
+    items: ['GCP (Cloud Functions, BigQuery)', 'AWS', 'Vercel', 'Shopify CLI', 'Git / GitHub', 'Postman', 'Zoho CRM'],
   },
 ] as const;

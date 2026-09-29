@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import portrait from '@/assets/profile.jpeg';
-import { metrics, site } from '@/data/site';
+import { company, metrics, site } from '@/data/site';
 
 export default function Hero() {
   return (
@@ -12,13 +12,26 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-6 md:px-10">
         <div className="grid items-center gap-14 md:grid-cols-[1.35fr_1fr] md:gap-16">
           <div>
-            <div className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-ink-700 bg-ink-900/60 py-1.5 pr-4 pl-2.5 backdrop-blur">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-copper-400 opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-copper-500" />
-              </span>
-              <span className="font-mono text-[11px] tracking-wider text-ink-300">
-                Software Engineer @ Lucira Jewelry
+            <div className="mb-8 flex flex-wrap items-center gap-2.5">
+              <a
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 rounded-full border border-copper-600/40 bg-ink-900/60 py-1.5 pr-4 pl-2.5 backdrop-blur transition-colors hover:border-copper-500"
+              >
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-copper-400 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-copper-500" />
+                </span>
+                <span className="font-mono text-[11px] tracking-wider text-ink-200">
+                  {company.role} @ {company.name}
+                </span>
+              </a>
+              <span className="inline-flex items-center gap-2.5 rounded-full border border-ink-700 bg-ink-900/60 py-1.5 pr-4 pl-2.5 backdrop-blur">
+                <span className="h-1.5 w-1.5 rounded-full bg-ink-400" />
+                <span className="font-mono text-[11px] tracking-wider text-ink-300">
+                  Software Engineer @ Lucira Jewelry
+                </span>
               </span>
             </div>
 
@@ -33,6 +46,29 @@ export default function Hero() {
               <span className="text-copper-400">headless commerce platforms</span> — architecture,
               ERP and payment integrations, internal tooling, data pipelines and conversion
               experimentation.
+            </p>
+
+            <p className="mt-5 max-w-xl leading-relaxed text-ink-300">
+              I also founded{' '}
+              <a
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-ink-600 text-ink-100 transition-colors hover:border-copper-600 hover:text-copper-400"
+              >
+                {company.name}
+              </a>
+              , where I build{' '}
+              <a
+                href={company.product.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-ink-600 text-ink-100 transition-colors hover:border-copper-600 hover:text-copper-400"
+              >
+                {company.product.name}
+              </a>
+              , a Shopify app that ranks collections by what actually sells. It&apos;s now in
+              Shopify App Store review.
             </p>
 
             <p className="mt-5 max-w-xl leading-relaxed text-ink-400">

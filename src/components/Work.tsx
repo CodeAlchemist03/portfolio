@@ -1,15 +1,21 @@
 import Section from './ui/Section';
 import Reveal from './ui/Reveal';
 import Tag from './ui/Tag';
-import { work } from '@/data/work';
+import { work, type Work as WorkItem } from '@/data/work';
+
+const STATUS: Record<WorkItem['status'], string> = {
+  live: 'Live',
+  building: 'In progress',
+  review: 'In App Store review',
+};
 
 export default function Work() {
   return (
     <Section
       id="work"
       eyebrow="Selected work"
-      title="Platforms in production"
-      intro="Commerce and lead-generation platforms I designed, built and still maintain. Each of the live sites below was taken through a second, ground-up rebuild — new architecture, not a reskin."
+      title="Products & platforms"
+      intro="The Shopify app I build at LeelaRam Technologies, and the commerce and lead-generation platforms I designed, built and still maintain. Projects marked Rebuilt v2 were taken through a second, ground-up rebuild — new architecture, not a reskin."
     >
       <div className="space-y-px overflow-hidden rounded-xl border border-ink-800 bg-ink-800">
         {work.map((p, i) => (
@@ -39,7 +45,7 @@ export default function Work() {
                           p.status === 'live' ? 'bg-emerald-400' : 'bg-copper-400'
                         }`}
                       />
-                      {p.status === 'live' ? 'Live' : 'In progress'}
+                      {STATUS[p.status]}
                     </span>
                     {p.rebuilt && (
                       <span className="rounded-full border border-ink-700 px-2.5 py-1 font-mono text-[10px] tracking-wider text-ink-300 uppercase">

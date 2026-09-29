@@ -1,5 +1,5 @@
 import { education } from '@/data/experience';
-import { site } from '@/data/site';
+import { company, site } from '@/data/site';
 import { work } from '@/data/work';
 
 /**
@@ -10,6 +10,7 @@ export default function StructuredData() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${site.url}/#person`,
     name: site.name,
     url: site.url,
     email: `mailto:${site.email}`,
@@ -23,19 +24,35 @@ export default function StructuredData() {
       addressRegion: 'Maharashtra',
       addressCountry: 'IN',
     },
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Lucira Jewelry',
-      url: 'https://www.lucirajewelry.com/',
-    },
+    // The company's @id is the one leelaramtechnologies.com declares for its
+    // own Organization node, so both sites describe the same entity.
+    worksFor: [
+      {
+        '@type': 'Organization',
+        '@id': company.schemaId,
+        name: company.name,
+        url: company.url,
+        slogan: company.slogan,
+        sameAs: [company.linkedin],
+      },
+      {
+        '@type': 'Organization',
+        name: 'Lucira Jewelry',
+        url: 'https://www.lucirajewelry.com/',
+      },
+    ],
     alumniOf: {
       '@type': 'CollegeOrUniversity',
       name: education.school,
     },
     knowsAbout: [
       'Headless Commerce',
+      'Shopify App Development',
+      'Collection Merchandising',
       'Next.js',
+      'Remix',
       'Shopify Storefront API',
+      'Shopify Admin API',
       'MongoDB',
       'ERP Integration',
       'Analytics Engineering',

@@ -1,11 +1,11 @@
 export const site = {
   name: 'Sumit Chavda',
-  role: 'Software Engineer',
-  tagline: 'Headless commerce, ERP integrations & analytics engineering',
+  role: 'Software Engineer & Founder',
+  tagline: 'Headless commerce, Shopify apps & analytics engineering',
   url: 'https://sumitchavda.vercel.app',
   /* Kept under ~160 chars so search results don't truncate it. */
   metaDescription:
-    'Software Engineer in Mumbai building headless commerce on Next.js, MongoDB and the Shopify APIs — ERP integrations, analytics engineering and performance.',
+    'Software engineer in Mumbai and founder of LeelaRam Technologies, maker of the SellRank Shopify app. Headless commerce on Next.js and the Shopify APIs.',
   location: 'Mumbai, India',
   email: 'sumitchavda3003@gmail.com',
   phone: '+91 98922 60330',
@@ -17,7 +17,25 @@ export const site = {
     youtube: 'https://youtube.com/@sumitchavda-w3h',
   },
   intro:
-    'I own a production headless commerce platform end to end — architecture, ERP and payment integrations, internal tooling, data pipelines and conversion experimentation — on Next.js, MongoDB and the Shopify APIs. Published GAN research at IEEE IGARSS 2025.',
+    'I own a production headless commerce platform end to end — architecture, ERP and payment integrations, internal tooling, data pipelines and conversion experimentation — on Next.js, MongoDB and the Shopify APIs. I also founded LeelaRam Technologies, where I build SellRank, a Shopify app that ranks collections by what actually sells. Published GAN research at IEEE IGARSS 2025.',
+} as const;
+
+/* The company I founded, and its first product. The structured data points at
+   the company site's own Organization node (@id), so search engines can tie
+   this page and leelaramtechnologies.com to the same entity. */
+export const company = {
+  name: 'LeelaRam Technologies',
+  role: 'Founder',
+  url: 'https://www.leelaramtechnologies.com',
+  schemaId: 'https://www.leelaramtechnologies.com/#organization',
+  linkedin: 'https://www.linkedin.com/company/leelaram-technologies/',
+  blog: 'https://www.leelaramtechnologies.com/blog',
+  slogan: 'Software that grows with your business',
+  product: {
+    name: 'SellRank',
+    url: 'https://www.leelaramtechnologies.com/products/sellrank',
+    status: 'In Shopify App Store review',
+  },
 } as const;
 
 export const metrics = [
@@ -31,6 +49,7 @@ export const navLinks = [
   { href: '#work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
   { href: '#stack', label: 'Stack' },
+  { href: '#writing', label: 'Writing' },
   { href: '#research', label: 'Research' },
   { href: '#about', label: 'About' },
 ] as const;

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import StructuredData from '@/components/StructuredData';
-import { site } from '@/data/site';
+import { company, site } from '@/data/site';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-const title = `${site.name} — ${site.role} | Headless Commerce & Next.js`;
+const title = `${site.name} — Software Engineer, Founder of ${company.name}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -32,6 +32,10 @@ export const metadata: Metadata = {
   category: 'technology',
   keywords: [
     'Sumit Chavda',
+    'LeelaRam Technologies',
+    'LeelaRam Technologies founder',
+    'SellRank',
+    'Shopify App Developer',
     'Software Engineer Mumbai',
     'Headless Commerce Developer',
     'Next.js Developer',

@@ -3,7 +3,8 @@ export type Work = {
   name: string;
   kind: string;
   url?: string;
-  status: 'live' | 'building';
+  /** 'review' is a finished product waiting on a store's approval. */
+  status: 'live' | 'building' | 'review';
   /** Marks projects rebuilt from the ground up, not iterated on. */
   rebuilt?: boolean;
   year: string;
@@ -13,6 +14,26 @@ export type Work = {
 };
 
 export const work: Work[] = [
+  {
+    slug: 'sellrank',
+    name: 'SellRank',
+    kind: 'Shopify app · LeelaRam Technologies',
+    url: 'https://www.leelaramtechnologies.com/products/sellrank',
+    status: 'review',
+    rebuilt: true,
+    year: '2025 — present',
+    summary:
+      'A Shopify app that ranks every collection by what actually sells — views, add-to-carts, orders, revenue and stock — and writes that order into Shopify’s own sorting, with no theme edits. Rebuilt from the collection-ordering engine first proven on Lucira’s live collections; submitted to the Shopify App Store in September 2026.',
+    highlights: [
+      'Percentage-slot order plans: each slot ranked by one of 19 measures or a weighted balanced score, narrowed by conditions such as in-stock only.',
+      'Live preview of the exact resulting order, with pin, demote, move and drag-and-drop curation before anything syncs to Shopify.',
+      'First-party web pixel counting product views and add-to-carts as daily totals per product, with no customer identifiers; optional GA4 import of up to 90 days of history.',
+      'Daily or weekly automatic re-sorts, version history with per-version performance attribution, and sort-health drift alerts.',
+      'Verified by 78,240+ automated sorting cases and an accuracy audit that runs against a live store.',
+      'Built to App Store requirements: session-token auth, HMAC-verified compliance webhooks, expiring offline tokens and Shopify billing.',
+    ],
+    stack: ['Remix', 'TypeScript', 'Shopify Admin GraphQL API', 'Web Pixels', 'Polaris', 'Prisma', 'PostgreSQL'],
+  },
   {
     slug: 'lucira',
     name: 'Lucira Jewelry',
@@ -84,6 +105,23 @@ export const work: Work[] = [
       'Responsive frontend with optimized content delivery and scalable content workflows.',
     ],
     stack: ['Next.js', 'React', 'Tailwind CSS', 'SEO', 'Vercel'],
+  },
+  {
+    slug: 'leelaram',
+    name: 'LeelaRam Technologies',
+    kind: 'Company site & publishing platform',
+    url: 'https://www.leelaramtechnologies.com/',
+    status: 'live',
+    year: '2026 — present',
+    summary:
+      'The site for the company I founded: products, services, case studies and a long-form blog, built on Next.js with one connected structured-data graph tying the company, its founder, its products and its work together.',
+    highlights: [
+      '60+ long-form articles on Shopify merchandising, platform changes and building software, each with its own share image, plus an RSS feed and an llms.txt map for AI answer engines.',
+      'SellRank product page with a chaptered walkthrough video, a screen-by-screen tour, version history and a five-part tutorial series.',
+      'JSON-LD for Organization, Person, SoftwareApplication, VideoObject and BlogPosting, linked by stable IDs.',
+      'Deployed to Vercel on every push, with Core Web Vitals tracked in production.',
+    ],
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'JSON-LD', 'Vercel'],
   },
 ];
 

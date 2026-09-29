@@ -1,10 +1,13 @@
 import Reveal from './ui/Reveal';
-import { site } from '@/data/site';
+import { company, site } from '@/data/site';
 
 const links = [
   { label: 'GitHub', href: site.socials.github, handle: 'smartysumit' },
   { label: 'LinkedIn', href: site.socials.linkedin, handle: 'sumitchavda03' },
   { label: 'YouTube', href: site.socials.youtube, handle: '@sumitchavda-w3h' },
+  { label: company.name, href: company.url, handle: 'leelaramtechnologies.com' },
+  { label: `${company.name} on LinkedIn`, href: company.linkedin, handle: 'company/leelaram-technologies' },
+  { label: company.product.name, href: company.product.url, handle: 'Shopify app' },
 ];
 
 export default function Contact() {
@@ -45,7 +48,7 @@ export default function Contact() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <ul className="mt-16 grid gap-px overflow-hidden rounded-xl border border-ink-800 bg-ink-800 sm:grid-cols-3">
+          <ul className="mt-16 grid gap-px overflow-hidden rounded-xl border border-ink-800 bg-ink-800 sm:grid-cols-2 lg:grid-cols-3">
             {links.map((l) => (
               <li key={l.label}>
                 <a
@@ -56,7 +59,7 @@ export default function Contact() {
                 >
                   <span>
                     <span className="label block">{l.label}</span>
-                    <span className="mt-1.5 block font-mono text-sm text-ink-100 transition-colors group-hover:text-copper-400">
+                    <span className="mt-1.5 block font-mono text-sm break-all text-ink-100 transition-colors group-hover:text-copper-400">
                       {l.handle}
                     </span>
                   </span>

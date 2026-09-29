@@ -1,6 +1,6 @@
 # sumitchavda.vercel.app
 
-Personal portfolio for **Sumit Chavda** — Software Engineer (headless commerce, ERP integrations, analytics engineering).
+Personal portfolio for **Sumit Chavda** — Software Engineer and founder of [LeelaRam Technologies](https://www.leelaramtechnologies.com), maker of the SellRank Shopify app (headless commerce, Shopify apps, ERP integrations, analytics engineering).
 
 Built with Next.js 15 (App Router) and Tailwind CSS v4. No runtime dependencies beyond React — the whole page is statically prerendered.
 

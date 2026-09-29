@@ -60,8 +60,8 @@ export function renderOgImage() {
               lineHeight: 1.4,
             }}
           >
-            Headless commerce on Next.js, MongoDB and the Shopify APIs — ERP integrations,
-            analytics engineering and performance.
+            Founder of LeelaRam Technologies, maker of SellRank. Headless commerce on
+            Next.js and the Shopify APIs.
           </div>
         </div>
 
@@ -69,7 +69,7 @@ export function renderOgImage() {
         <div style={{ display: 'flex', gap: 64 }}>
           {[
             ['500K', 'monthly sessions'],
-            ['150+', 'features shipped'],
+            ['SellRank', 'our Shopify app'],
             ['IEEE', 'IGARSS 2025'],
           ].map(([value, label]) => (
             <div key={label} style={{ display: 'flex', flexDirection: 'column' }}>
