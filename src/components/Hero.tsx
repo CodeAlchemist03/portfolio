@@ -67,8 +67,16 @@ export default function Hero() {
               >
                 {company.product.name}
               </a>
-              , a Shopify app that ranks collections by what actually sells. It&apos;s now in
-              Shopify App Store review.
+              , a Shopify app that ranks collections by what actually sells. It&apos;s{' '}
+              <a
+                href={company.product.appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-ink-600 text-ink-100 transition-colors hover:border-copper-600 hover:text-copper-400"
+              >
+                live on the Shopify App Store
+              </a>
+              .
             </p>
 
             <p className="mt-5 max-w-xl leading-relaxed text-ink-400">

@@ -12,6 +12,14 @@ export type Article = {
    Titles, dates and reading times match the published posts exactly. */
 export const writing: Article[] = [
   {
+    title: 'Shopify App Review Feedback: The Two Items That Held Up SellRank, and How We Fixed Them',
+    url: 'https://www.leelaramtechnologies.com/blog/shopify-app-review-feedback-how-we-fixed-it',
+    date: '2026-10-15',
+    readingTime: '6 min read',
+    kind: 'Engineering',
+    summary: 'A pricing link that left Shopify, approval on reinstall, and a screencast that had to show live Google Analytics data.',
+  },
+  {
     title: 'Submitting a Shopify App for Review in 2026: The Checklist We Used for SellRank',
     url: 'https://www.leelaramtechnologies.com/blog/submitting-a-shopify-app-for-review-2026',
     date: '2026-09-28',

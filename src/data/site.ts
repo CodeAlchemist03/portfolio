@@ -34,7 +34,8 @@ export const company = {
   product: {
     name: 'SellRank',
     url: 'https://www.leelaramtechnologies.com/products/sellrank',
-    status: 'In Shopify App Store review',
+    appStoreUrl: 'https://apps.shopify.com/sellrank-collection-sort',
+    status: 'Live on the Shopify App Store',
   },
 } as const;
 

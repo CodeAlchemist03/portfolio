@@ -33,7 +33,7 @@ export const experience: Role[] = [
     current: true,
     points: [
       'Founded and run a product-led software company building Shopify apps, websites, mobile apps and custom software for growing businesses; designed, deployed and maintain 5+ production web and commerce platforms across jewelry, retail and construction.',
-      'Built SellRank, a Shopify app that ranks collections by real sales, views and stock, and submitted it to the Shopify App Store in September 2026.',
+      'Built SellRank, a Shopify app that ranks collections by real sales, views and stock, and launched it on the Shopify App Store in October 2026.',
       'Rebuilt the collection-ordering engine first proven on Lucira’s live collections as a multi-tenant embedded app, with a first-party web pixel, scheduled re-sorts, version history and sort-health monitoring, verified by 78,240+ automated sorting cases.',
       'Own the full lifecycle from requirements and solution architecture through deployment, analytics implementation and post-launch support.',
       'Deliver Shopify storefronts, headless commerce applications, Next.js platforms, ERP integrations, payment gateways and business automation workflows.',
